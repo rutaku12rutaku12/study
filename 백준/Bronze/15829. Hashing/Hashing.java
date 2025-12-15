@@ -6,15 +6,14 @@ public class Main {
 		int L = scan.nextInt();
 		scan.nextLine();
 		String A = scan.nextLine();
-		int hash = 0;
+		long hash = 0;
+		long pow=1;
 		for(int i = 0; i < L; i ++) {
-			for(int j = 'a'; j<='z'; j++) {
-				A.charAt(i);
-				if(A.charAt(i)==j){
-				hash+=(j-'a'+1)*Math.pow(31,i);
-				}
+				int value = A.charAt(i)-'a'+1;
+				hash = (hash+ value*pow)%1234567891;
+				pow=pow*31%1234567891;
 			}
-		}System.out.println(hash);
+		System.out.println(hash);
 		scan.close();
 	}
 }
