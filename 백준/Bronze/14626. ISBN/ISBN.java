@@ -28,7 +28,7 @@ public class Main {
 		for(int a=0; a<10;a++) {
 			if((sum+x*a)%10==0) {
 				bw.write(a+"");
-				
+				break;
 			}
 		}
 		bw.flush();
