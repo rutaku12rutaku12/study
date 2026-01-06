@@ -11,23 +11,24 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		String A = br.readLine();
 		
-		int sum =0;
-		int bro = -1;
+		int sum = 0;
+		int bro = 0;
 		
-		for( int i = 0; i <13; i++) {
-			char c= A.charAt(i);
-			if( c== '*') {
-				bro = i;
+		for(int i=0; i<13;i++) {
+			char c = A.charAt(i);
+			if(c=='*') {
+				bro=i;
 				continue;
 			}
-			int num = c-'0';
-			sum+=(i%2==0)? num: num*3;
+			int k = c-'0';
+			sum+= i%2==0? k:3*k;
+			
 		}
-		int weight = (bro%2==0)?1:3;
-		for(int x= 0; x<=9; x++) {
-			if((sum+x*weight)%10==0) {
-				bw.write(x+"");
-				break;
+		int x = bro%2==0? 1:3;
+		for(int a=0; a<10;a++) {
+			if((sum+x*a)%10==0) {
+				bw.write(a+"");
+				
 			}
 		}
 		bw.flush();
