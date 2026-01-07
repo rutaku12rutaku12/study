@@ -15,22 +15,20 @@ public class Main {
 
 		int next;
 		
-		if(A.matches("\\d+")) {
-			next = Integer.parseInt(A)+3;
-		}else if (B.matches("\\d+")) {
+		if(A.matches("\\d+")){
+			next = Integer.parseInt(A)+3; 
+		}else if(B.matches("\\d+")) {
 			next = Integer.parseInt(B)+2;
-		} else {
-			next = Integer.parseInt(C)+1;
-		}
-				
-		if ( next %15==0) {
+		}else { next = Integer.parseInt(C)+1;}
+		
+		if(next%3==0 && next%5==0) {
 			bw.write("FizzBuzz");
-		} else if ( next%3 ==0) {
+		}else if(next%3==0 && next%5!=0) {
 			bw.write("Fizz");
-		} else if ( next%5 ==0) {
+		}else if(next%3!=0 && next%5==0) {
 			bw.write("Buzz");
 		}else {bw.write(next+"");}
-			
+		
 		bw.flush();
 		bw.close();
 	}
