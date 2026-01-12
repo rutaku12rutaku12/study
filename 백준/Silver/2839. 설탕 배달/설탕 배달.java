@@ -16,16 +16,16 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int N = Integer.parseInt(br.readLine());
-		int count = 0;
+		int c = 0;
 		while(N>=0) {
 			if(N%5==0) {
-				count+= N/5;
-				bw.write(String.valueOf(count));
+				c += N/5;
+				bw.write(c+"");
 				bw.flush();
 				return;
 			}
 			N-=3;
-			count++;
+			c++;
 		}
 		bw.write("-1");
 		bw.flush();
