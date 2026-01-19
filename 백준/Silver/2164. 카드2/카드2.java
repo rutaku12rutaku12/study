@@ -14,13 +14,13 @@ public class Main{
 		
 		int N = Integer.parseInt(br.readLine());
 		Queue<Integer> queue = new LinkedList<>();
-		for(int i=1; i<=N;i++) {
+		for(int i=1; i<=N; i++) {
 			queue.add(i);
 		}
-			while(queue.size()>1) {
-				queue.remove();
-				queue.add(queue.remove());
-			}
+		while(queue.size()>1) {
+			queue.remove();
+			queue.add(queue.remove());
+		}
 		bw.write(queue.peek()+"");
 		bw.flush();
 		bw.close();
