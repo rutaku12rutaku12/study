@@ -28,26 +28,26 @@ public class Main{
 			int M = Integer.parseInt(br.readLine()); // 비교 숫자대상
 				String b =(br.readLine());
 				StringTokenizer stt = new StringTokenizer(b);
-				for(int q=0; q<M;q++) {
-					int A=Integer.parseInt(stt.nextToken());
-					int left = 0;
+				for(int i =0; i<M; i++) {
+					int left= 0;
 					int right = arr.length;
+					int target = Integer.parseInt(stt.nextToken());
 					while(left<right) {
 						int mid = (left+right)/2;
-						if(arr[mid]>=A)right=mid;
-						else left =mid+1;
+						if(arr[mid]>=target) {
+							right=mid;
+						} else left=mid+1;
+					} int low=left;
+					left =0;
+					right=arr.length;
+					while(left<right) {
+						int mid =(left+right)/2;
+						if(arr[mid]>target) {
+							right=mid;
+						} else left =mid+1;
 					}
-					int lower = left;
-					
-					left = 0;
-					right= arr.length;
-					while(left < right) {
-						int mid = (left+right)/2;
-						if( arr[mid]>A) right = mid;
-						else left=mid+1;
-					}
-					int upper = left;
-					bw.write((upper-lower)+ " ");
+					int high= left;
+					bw.write(high-low+" ");
 				}
 		bw.flush();
 		bw.close();
