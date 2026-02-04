@@ -18,12 +18,9 @@ public class Main{
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		String A = br.readLine();
-		StringTokenizer st = new StringTokenizer(A);
-		int b = Integer.parseInt(st.nextToken());
-		int c = Integer.parseInt(st.nextToken());
-		int B = Integer.parseInt(br.readLine());
-		int C = Integer.parseInt(br.readLine());
-		bw.write(B*C+"");
+		BigInteger B = new BigInteger (br.readLine());
+		BigInteger C = new BigInteger (br.readLine());
+		bw.write(B.multiply(C)+"");
 		bw.flush();
 		bw.close();
 	}
