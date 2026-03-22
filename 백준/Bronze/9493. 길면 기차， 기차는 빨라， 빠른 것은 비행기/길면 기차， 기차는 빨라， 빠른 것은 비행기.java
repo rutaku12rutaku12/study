@@ -1,28 +1,34 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        while (true) {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        while(true) {
+
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int M = Integer.parseInt(st.nextToken());
-            int A = Integer.parseInt(st.nextToken());
-            int B = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
+            if(a==0&&b==0&&c==0){
+                bw.flush();
+                bw.flush();
+                bw.close();
+                return;
+            }
+            double t = a*(1.0/b-1.0/c);
+            int k = (int)Math.round(t*3600);
+            int h = k/3600;
+            int m = k%3600/60;
+            int s = k%60;
+            bw.write(String.format("%d:%02d:%02d\n",h,m,s));
 
-            if (M == 0 && A == 0 && B == 0) break;
-
-            // 시간 차이 (초) - 반올림
-            double t = M * (1.0 / A - 1.0 / B);
-            int totalSec = (int) Math.round(t * 3600);
-
-            int h = totalSec / 3600;
-            int m = (totalSec % 3600) / 60;
-            int s = totalSec % 60;
-
-            System.out.printf("%d:%02d:%02d\n", h, m, s);
         }
+
     }
 }
