@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -21,7 +20,7 @@ public class Main {
             int set =1; //
             int n = 0; //
             int k = -1;
-            while(L!=p || p!=R){
+            while(true){
                // bw.write(n+1+"단계 ");
                // bw.write("위치:"+p+" ");
                 if(L==p){
