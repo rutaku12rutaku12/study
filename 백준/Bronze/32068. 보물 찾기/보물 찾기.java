@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -17,24 +16,11 @@ public class Main {
             int L = Integer.parseInt(st.nextToken());
             int R = Integer.parseInt(st.nextToken());
             int S = Integer.parseInt(st.nextToken());
-            long p = S; // 위치
-            long set =1; //
-            long n = 0; //
-            long k = -1;
-            while(true){
-               // bw.write(n+1+"단계 ");
-               // bw.write("위치:"+p+" ");
-                if(L==p || R==p){
-                   // bw.write("위치:"+p+" ");
-                    bw.write(set+"\n");
-                    break;
-                }
-                set++;
-                n++;
-                k*=-1;
-                p+=n*k;
-                //bw.write("위치:"+p+"\n ");
-            }
+           
+            int r = 2*(R-S);
+            int l = 2*(S-L)+1;
+            bw.write(Math.min(r,l)+"\n");
+            
 
         }
         bw.flush();
