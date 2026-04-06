@@ -23,13 +23,7 @@ public class Main {
             while(true){
                // bw.write(n+1+"단계 ");
                // bw.write("위치:"+p+" ");
-                if(L==p){
-                   // bw.write("위치:"+p+" ");
-                    bw.write(set+"\n");
-                    bw.flush();
-                    break;
-                }
-                else if(R==p){
+                if(L==p || R==p){
                    // bw.write("위치:"+p+" ");
                     bw.write(set+"\n");
                     bw.flush();
