@@ -27,7 +27,6 @@ public class Main {
                 if(L==p || R==p){
                    // bw.write("위치:"+p+" ");
                     bw.write(set+"\n");
-                    bw.flush();
                     break;
                 }
                 set++;
