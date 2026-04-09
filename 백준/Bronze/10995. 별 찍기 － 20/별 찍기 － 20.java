@@ -1,28 +1,29 @@
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(br.readLine());
-
-        for (int i = 1; i <= N; i++) {
-
-            // 짝수 줄이면 앞에 공백 1칸
-            if (i % 2 == 0) {
+        int T = Integer.parseInt(br.readLine());
+        for(int i=0; i<T;i++){
+            if(i%2==1){
                 bw.write(" ");
             }
+            bw.write("*");
+            for(int j=1; j<T;j++){
+                bw.write(" *");
+            }bw.write("\n");
 
-            // 별 N개 출력
-            for (int j = 0; j < N; j++) {
-                bw.write("* ");
-            }
-
-            bw.write("\n");
         }
-
         bw.flush();
         bw.close();
+
     }
 }
