@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -21,24 +22,19 @@ public class Main {
             int p = Integer.parseInt(st.nextToken());
             if(p>0){
                 str++;
-            }
-            else{
+            }else {
                 if(fr){
                     fr=false;
-                    cool =2;
+                    cool=2;
                 }
-                else{
-                    str =0;
+                else{ // 프리져도 없을 때
+                    str=0;
                 }
-            }
-            max = Math.max(max,str);
-            if(cool>0){
-                cool-=1;
-            }
-            if(cool==0 && !fr){
+            } cool--;
+            if(cool<=0 && !fr){
                 fr=true;
             }
-
+            max=Math.max(max,str);
         } bw.write(max+"");
         bw.flush();
         bw.close();
